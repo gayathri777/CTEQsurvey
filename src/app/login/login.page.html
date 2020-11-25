@@ -1,0 +1,70 @@
+<ion-content padding>
+
+  <div class="div-content">
+
+    <ion-title class="ion-text-center login">
+      <ion-icon class="ion-text-center icon" size="large" name="person-circle-sharp"></ion-icon> Login
+    </ion-title>
+    <!-- <ion-toolbar>
+  <ion-title class="ion-text-center">login</ion-title>
+</ion-toolbar> -->
+
+
+    <!-- <form [formGroup]="todo" (ngSubmit)="logForm()">
+    <ion-item>
+      <ion-label>Todo</ion-label>
+      <ion-input type="text" formControlName="title"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label>Description</ion-label>
+      <ion-textarea formControlName="description"></ion-textarea>
+    </ion-item>
+    <button ion-button type="submit" [disabled]="!todo.valid">Submit</button>
+  </form> -->
+
+    <form [formGroup]="login" (submit)="logForm()">
+      <ion-list>
+        <ion-item>
+          <ion-label class="f-size" color="dark" position="floating">Name</ion-label>
+          <ion-input type="text" formControlName="name" required></ion-input>
+        </ion-item>
+        <div class="error-message"
+          *ngIf="login.get('name').hasError('required') && (login.get('name').dirty || login.get('name').touched)">
+          Please enter your name
+        </div>
+        <ion-item>
+          <ion-label class="f-size" color="dark" position="floating">Gender</ion-label>
+          <ion-select formControlName="gender">
+            <ion-select-option value="female">Female</ion-select-option>
+            <ion-select-option value="male">Male</ion-select-option>
+          </ion-select>
+        </ion-item>
+        <div class="error-message"
+          *ngIf="login.get('gender').hasError('required') && (login.get('gender').dirty || login.get('gender').touched)">
+          Please select you gender.
+        </div>
+        <ion-item>
+          <ion-label class="f-size" color="dark" position="floating">Age</ion-label>
+          <ion-input type="text" formControlName="age" required></ion-input>
+        </ion-item>
+        <div class="error-message"
+          *ngIf="login.get('age').hasError('required') && (login.get('age').dirty || login.get('age').touched)">
+          Please enter your age.
+        </div>
+        <div class="error-message"
+          *ngIf="isAgeValid==false">
+          Please enter valid age.This survey is for children with age between 5 and 18
+        </div>
+        <ion-item>
+          <ion-label class="f-size" color="dark" position="floating">School code</ion-label>
+          <ion-input type="text" formControlName="code" required></ion-input>
+        </ion-item>
+        <div class="error-message"
+          *ngIf="login.get('code').hasError('required') && (login.get('code').dirty || login.get('code').touched)">
+          Please enter your school code.
+        </div>
+        <ion-button class="submit-btn" expand="block" type="submit">Login</ion-button>
+      </ion-list>
+    </form>
+  </div>
+</ion-content>

@@ -1,0 +1,43 @@
+<ion-toolbar>
+  <ion-title>CTEQ Survey</ion-title>
+</ion-toolbar>
+
+<ion-content padding>
+  <form [formGroup]="question5" (submit)="onNext()">
+    <ion-list>
+      <ion-radio-group formControlName="q5">
+        <ion-list-header class="f-size">
+          5. How much do you enjoy {{q5_task}}?
+        </ion-list-header>
+        <ion-item>
+          <ion-label>a lot</ion-label>
+          <ion-radio value="a lot"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>a little bit</ion-label>
+          <ion-radio value="a little bit"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>not bothered</ion-label>
+          <ion-radio value="not bothered"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>not much</ion-label>
+          <ion-radio value="not much"></ion-radio>
+        </ion-item>
+        <ion-item>
+          <ion-label>don't enjoy</ion-label>
+          <ion-radio value="don't enjoy"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <div class="error-message" *ngIf="isError">
+      Please answer the above question and move forward.
+    </div>
+    <ion-button type="button" (click)="navigateBack()">
+      <ion-icon name="arrow-back-outline"></ion-icon> Back
+    </ion-button>
+    <ion-button type="submit" class="ion-float-right">Next <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+  </form>
+</ion-content>

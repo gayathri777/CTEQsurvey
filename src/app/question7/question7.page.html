@@ -1,0 +1,22 @@
+<ion-toolbar>
+  <ion-title>CTEQ Survey</ion-title>
+</ion-toolbar>
+
+
+<ion-content padding>
+  <form [formGroup]="question7" (submit)="onNext()">
+    <ion-list>
+        <ion-list-header>
+            7. Try to name {{n}} other pieces of equipment you have used to {{q7_task}} ?
+          </ion-list-header>
+          <ion-item>
+            <ion-textarea formControlName="q7" placeholder="Enter here..."></ion-textarea>
+          </ion-item>
+          <div class="error-message" *ngIf="isError">
+              Please answer the above question and move forward.
+          </div>
+    </ion-list>
+    <ion-button type="button" (click)="navigateBack()"><ion-icon name="arrow-back-outline"></ion-icon> Back</ion-button>
+    <ion-button type="submit" class="ion-float-right">Next <ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+  </form>
+</ion-content>

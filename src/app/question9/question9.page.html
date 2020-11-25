@@ -1,0 +1,27 @@
+<!-- <ion-toolbar>
+  <ion-title>CTEQ Survey</ion-title>
+</ion-toolbar> -->
+
+<ion-header>
+    <ion-toolbar>
+      <ion-buttons slot="start">
+        <ion-back-button></ion-back-button>
+      </ion-buttons>
+      <ion-title>CTEQ Survey</ion-title>
+    </ion-toolbar>
+  </ion-header>
+<ion-content padding>
+  <form [formGroup]="question9" (submit)="onNext()">
+    <ion-list>
+      <ion-list-header>
+        9. can you write down 3 things that you use your {{technology}} for?
+      </ion-list-header>
+      <ion-item>
+        <ion-textarea formControlName="q9" placeholder="Enter more information here..."></ion-textarea>
+      </ion-item>
+
+    </ion-list>
+    <ion-button type="button" (click)="navigateBack()"><ion-icon name="arrow-back-outline"></ion-icon> Back</ion-button>
+    <ion-button type="submit" class="ion-float-right">Next <ion-icon name="arrow-forward-outline"></ion-icon></ion-button>
+  </form>
+</ion-content>

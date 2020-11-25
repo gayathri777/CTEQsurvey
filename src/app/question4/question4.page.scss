@@ -1,0 +1,17 @@
+.f-size {
+    font-size: 20px !important;
+    color: #333 !important;
+  }
+  ion-toolbar{
+    --ion-background-color: #3880ff;
+    --ion-background-image: linear-gradient(315deg, #3880ff 0%, #09c6f9 74%);
+    color: #fff;
+    --margin-bottom: 10px
+  }
+  .button {
+    margin-top: 30px !important;
+  }
+  .error-message{
+    color:#f04141 !important;
+    padding-top: 10px !important;
+  }

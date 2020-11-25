@@ -1,0 +1,31 @@
+<ion-toolbar>
+  <ion-title>CTEQ Survey</ion-title>
+</ion-toolbar>
+
+
+<ion-content padding>
+  <form [formGroup]="question1" (submit)="onNext()">
+    <ion-list>
+      <ion-radio-group formControlName="q1">
+        <ion-list-header class="f-size">
+          1. Do you konw what a {{q1_task}} is?
+        </ion-list-header>
+
+        <ion-item>
+          <ion-label>Yes</ion-label>
+          <ion-radio value="yes"></ion-radio>
+        </ion-item>
+
+        <ion-item>
+          <ion-label>No</ion-label>
+          <ion-radio value="no"></ion-radio>
+        </ion-item>
+      </ion-radio-group>
+    </ion-list>
+    <div class="error-message" *ngIf="isError">
+      Please answer the above question and move forward.
+    </div>
+    <ion-button type="submit" class="ion-float-right">Next <ion-icon name="arrow-forward-outline"></ion-icon>
+    </ion-button>
+  </form>
+</ion-content>

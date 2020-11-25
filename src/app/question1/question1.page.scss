@@ -1,0 +1,23 @@
+.submit-btn {
+    margin-top: 30px;
+  }
+  .div-content{
+    position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%,-50%);
+      width: 90% !important;
+  }
+  .f-size {
+    font-size: 20px !important;
+    color: #333 !important;
+  }
+  ion-toolbar{
+    --ion-background-color: #3880ff;
+    --ion-background-image: linear-gradient(315deg, #3880ff 0%, #09c6f9 74%);
+    color: #fff;
+  }
+  .error-message{
+    color:#f04141 !important;
+    padding-top: 10px !important;
+  }
